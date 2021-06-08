@@ -55,3 +55,42 @@ print("Total seconds--->", t.total_seconds())
 t1 = timedelta(weeks=2, days=2, hours=12, minutes=12, seconds=20)
 t2 = timedelta(days=5, hours=12)
 print("Timedelta difference--->", t1-t2)
+
+
+"""
+    Python format datetime
+"""
+current_datetime = datetime.datetime.now()
+t = current_datetime.strftime('%H:%M:%S')
+print('Current time->', t)
+
+today_date = current_datetime.strftime('%d-%m-%Y %H:%M:%S')
+print("today_date->", today_date)
+
+
+"""
+    strptime()-> String to datetime
+"""
+string_date_1 = "8 June 2021"
+date_conversion_1 = datetime.datetime.strptime(string_date_1, '%d %B %Y')
+print("date_conversion_1->", date_conversion_1)
+
+string_date_2 = "2021-12-01 12:32:20"
+date_conversion_2 = datetime.datetime.strptime(string_date_2, '%Y-%m-%d %H:%M:%S')
+print("date_conversion_2->", date_conversion_2)
+
+string_date_3 = "8 Jul 2021"
+date_conversion_3 = datetime.datetime.strptime(string_date_3, '%d %b %Y')
+print("date_conversion_3->", date_conversion_3)
+
+
+"""
+    Timezone operations
+"""
+import pytz
+local = datetime.datetime.now()
+print("Local time->", local)
+
+tz_ny = pytz.timezone('America/New_York')
+datetime_ny = datetime.datetime.now(tz_ny)
+print("New York state time->", datetime_ny)
