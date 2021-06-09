@@ -17,8 +17,9 @@ class BMW(Car):
 
 
 class Audi(Car):
+    
     def description(self):
-        super().description()
+        # super().description()
         return f"{self.name} can run {self.mileage} for per litre."
 
 
